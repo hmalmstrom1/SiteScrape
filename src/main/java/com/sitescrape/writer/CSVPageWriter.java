@@ -26,7 +26,7 @@ public class CSVPageWriter implements PageWriter {
         CSVWriter writer = new CSVWriter(new FileWriter(file));
 
         for (Article article : articles) {
-            writer.writeNext(article.toArray());
+            writer.writeNext(new String[] { article.getArticleTitle(), article.getArticleURL(), article.getCompanyName(), article.getCompanyWebSite() });
         }
 
         writer.close();
